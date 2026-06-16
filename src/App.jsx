@@ -10,14 +10,23 @@ import {
   FaLock,
   FaBrain,
   FaFlask,
-  FaShieldAlt,
   FaMoneyBillWave,
   FaCheckCircle,
   FaClock,
   FaExclamationTriangle,
   FaHospitalUser,
   FaUserMd,
-  FaBars
+  FaBars,
+  FaHome,
+  FaRobot,
+  FaPlus,
+  FaEdit,
+  FaSearch,
+  FaArrowRight,
+  FaArrowLeft,
+  FaTicketAlt,
+  FaSyncAlt,
+  FaRegStar,
 } from "react-icons/fa";
 
 import {
@@ -25,8 +34,10 @@ import {
   MdBiotech,
   MdHealthAndSafety,
   MdMonitorHeart,
-  MdAnalytics
+  MdAnalytics,
 } from "react-icons/md";
+
+
 // ===================== CORES & TOKENS =====================
 const C = {
   primary: "#083B82",
@@ -406,20 +417,20 @@ function LandingPage({ onLogin }) {
   ];
 
   const problems = [
-    { icon: "🏥", t: "Sem acompanhamento", d: "Apenas 23% dos brasileiros fazem checkup preventivo anual" },
-    { icon: "⏳", t: "Resultados demorados", d: "Laboratórios tradicionais levam até 5 dias para liberar laudos" },
-    { icon: "📋", t: "Laudos incompreensíveis", d: "Resultados técnicos sem contexto claro ou visual" },
-    { icon: "⚠️", t: "Prevenção negligenciada", d: "Doenças crônicas custam R$ 75bi/ano ao sistema" },
-    { icon: "🔄", t: "Fragmentação de dados", d: "Histórico de saúde espalhado em diferentes clínicas" },
+    { icon: <FaHospitalUser />, t: "Sem acompanhamento", d: "Apenas 23% dos brasileiros fazem checkup preventivo anual" },
+    { icon: <FaClock />, t: "Resultados demorados", d: "Laboratórios tradicionais levam até 5 dias para liberar laudos" },
+    { icon: <MdAnalytics />, t: "Laudos incompreensíveis", d: "Resultados técnicos sem contexto claro ou visual" },
+    { icon: <FaExclamationTriangle />, t: "Prevenção negligenciada", d: "Doenças crônicas custam R$ 75bi/ano ao sistema" },
+    { icon: <FaSyncAlt />, t: "Fragmentação de dados", d: "Histórico de saúde espalhado em diferentes clínicas" },
   ];
 
   const diferenciais = [
-    { icon: "🔬", t: "Resultado em 24h", d: "Automação que acelera sem perder qualidade" },
-    { icon: "🧠", t: "IA Preventiva", d: "Identifica tendências de risco antes dos sintomas" },
-    { icon: "📊", t: "Dashboard 360°", d: "Histórico visual completo em um só lugar" },
-    { icon: "👨‍⚕️", t: "Equipe Especializada", d: "Biomédicos revisam cada resultado" },
-    { icon: "🔒", t: "Dados Protegidos", d: "LGPD compliant, criptografia end-to-end" },
-    { icon: "🔔", t: "Alertas Preventivos", d: "Notificações automáticas e inteligentes" },
+    { icon: <FaMicroscope />, t: "Resultado em 24h", d: "Automação que acelera sem perder qualidade" },
+    { icon: <FaBrain />, t: "IA Preventiva", d: "Identifica tendências de risco antes dos sintomas" },
+    { icon: <FaChartLine />, t: "Dashboard 360°", d: "Histórico visual completo em um só lugar" },
+    { icon: <FaUserMd />, t: "Equipe Especializada", d: "Biomédicos revisam cada resultado" },
+    { icon: <FaLock />, t: "Dados Protegidos", d: "LGPD compliant, criptografia end-to-end" },
+    { icon: <FaBell />, t: "Alertas Preventivos", d: "Notificações automáticas e inteligentes" },
   ];
 
   const testimonials = [
@@ -515,7 +526,7 @@ function LandingPage({ onLogin }) {
                 backdropFilter: "blur(10px)", transition: "background 0.15s",
               }} onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.18)"}
                 onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.10)"}>
-                Conhecer o BIOLAB 360 →
+                Conhecer o BIOLAB 360
               </button>
             </div>
             <div className="stats-row" style={{ display: "flex", gap: 36, marginTop: 52, flexWrap: "wrap" }}>
@@ -599,10 +610,10 @@ function LandingPage({ onLogin }) {
           </div>
           <div className="solution-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
             {[
-              { icon: "🩸", t: "Coleta Laboratorial", d: "Mais de 800 tipos de exames com equipamentos Roche de última geração", color: C.primary },
-              { icon: "⚡", t: "Resultado em 24h", d: "Pipeline automatizado com liberação digital em tempo real", color: C.secondary },
-              { icon: "📱", t: "Plataforma BIOLAB 360", d: "Dashboard completo com histórico, gráficos e interpretação por IA", color: "#7C3AED" },
-              { icon: "🛡️", t: "Monitoramento Preventivo", d: "Alertas inteligentes baseados em tendências antes de virar problema", color: C.success },
+              { icon: <FaFlask />, t: "Coleta Laboratorial", d: "Mais de 800 tipos de exames com equipamentos Roche de última geração", color: C.primary },
+              { icon: <MdBiotech />, t: "Resultado em 24h", d: "Pipeline automatizado com liberação digital em tempo real", color: C.secondary },
+              { icon: <MdDashboard />, t: "Plataforma BIOLAB 360", d: "Dashboard completo com histórico, gráficos e interpretação por IA", color: "#7C3AED" },
+              { icon: <MdHealthAndSafety />, t: "Monitoramento Preventivo", d: "Alertas inteligentes baseados em tendências antes de virar problema", color: C.success },
             ].map(s => (
               <div key={s.t} style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
                 <div style={{ background: s.color, padding: "22px 24px 18px", display: "flex", alignItems: "center", gap: 12 }}>
@@ -627,10 +638,10 @@ function LandingPage({ onLogin }) {
           </h2>
           <div className="steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
             {[
-              { n: "1", icon: "📋", t: "Agende", d: "Escolha a data pelo app ou telefone" },
-              { n: "2", icon: "🩸", t: "Coleta", d: "Compareça ao laboratório — rápido e indolor" },
-              { n: "3", icon: "🔬", t: "Análise", d: "Nossa equipe processa com automação avançada" },
-              { n: "4", icon: "📲", t: "Resultado", d: "Receba no app em até 24h com interpretação" },
+              { n: "1", icon: <MdAnalytics />, t: "Agende", d: "Escolha a data pelo app ou telefone" },
+              { n: "2", icon: <FaFlask />, t: "Coleta", d: "Compareça ao laboratório — rápido e indolor" },
+              { n: "3", icon: <FaMicroscope />, t: "Análise", d: "Nossa equipe processa com automação avançada" },
+              { n: "4", icon: <MdMonitorHeart />, t: "Resultado", d: "Receba no app em até 24h com interpretação" },
             ].map((s, i) => (
               <div key={s.t}>
                 <div style={{
@@ -683,7 +694,7 @@ function LandingPage({ onLogin }) {
                 background: "rgba(255,255,255,0.09)", backdropFilter: "blur(12px)",
                 borderRadius: 18, padding: 28, border: "1px solid rgba(255,255,255,0.15)",
               }}>
-                <div style={{ color: "#FFD700", fontSize: 16, marginBottom: 14, letterSpacing: 2 }}>{"★".repeat(t.stars)}</div>
+                <div style={{ color: "#FFD700", fontSize: 16, marginBottom: 14, display: "flex", gap: 3 }}>{Array.from({ length: t.stars }).map((_, i) => <FaRegStar key={i} />)}</div>
                 <p style={{ color: "rgba(255,255,255,0.88)", fontSize: 15, lineHeight: 1.7, margin: "0 0 18px", fontStyle: "italic" }}>"{t.text}"</p>
                 <div>
                   <div style={{ fontWeight: 700, color: "#fff", fontSize: 14 }}>{t.name}</div>
@@ -739,7 +750,7 @@ function LandingPage({ onLogin }) {
             Junte-se a mais de 12.000 pacientes que já monitoram sua saúde de forma inteligente com o BIOLAB 360.
           </p>
           <div className="cta-btns" style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-            <Btn size="lg">📅 Agendar Exame Gratuito</Btn>
+            <Btn size="lg"><FaCalendarAlt /> Agendar Exame Gratuito</Btn>
             <Btn size="lg" variant="ghost" onClick={onLogin}>Acessar Plataforma</Btn>
           </div>
         </div>
@@ -804,22 +815,22 @@ function LoginPage({ onLogin, onBack }) {
           </div>
           {error && (
             <div style={{ background: C.dangerBg, color: C.danger, borderRadius: 10, padding: "11px 14px", fontSize: 13, fontWeight: 500, display: "flex", alignItems: "center", gap: 8 }}>
-              ⚠️ {error}
+              <FaExclamationTriangle /> {error}
             </div>
           )}
           <Btn onClick={handle} disabled={loading} size="lg" style={{ width: "100%", justifyContent: "center", marginTop: 4 }}>
-            {loading ? "Entrando..." : "Entrar →"}
+            {loading ? "Entrando..." : <><span>Entrar</span><FaArrowRight /></>}
           </Btn>
         </div>
         <div style={{ marginTop: 24, padding: "16px", background: C.bg, borderRadius: 12, fontSize: 12 }}>
           <div style={{ fontWeight: 700, color: C.textSec, marginBottom: 8 }}>Credenciais de demonstração:</div>
-          <div style={{ color: C.text, marginBottom: 4 }}>👨‍⚕️ Admin: admin@biolab.com / 123456</div>
-          <div style={{ color: C.text }}>👤 Paciente: paciente@biolab.com / 123456</div>
+          <div style={{ color: C.text, marginBottom: 4, display: "flex", alignItems: "center", gap: 6 }}><FaUserMd /> Admin: admin@biolab.com / 123456</div>
+          <div style={{ color: C.text, display: "flex", alignItems: "center", gap: 6 }}><FaUserFriends /> Paciente: paciente@biolab.com / 123456</div>
         </div>
         <button onClick={onBack} style={{
           marginTop: 16, width: "100%", background: "none", border: "none",
           color: C.textSec, fontSize: 13, cursor: "pointer", textDecoration: "underline", fontFamily: "inherit",
-        }}>← Voltar para o site</button>
+        }}><FaArrowLeft /> Voltar para o site</button>
       </div>
     </div>
   );
@@ -901,7 +912,7 @@ function Topbar({ title, onMenu }) {
       background: C.surface, borderBottom: `1px solid ${C.border}`,
       padding: "14px 20px", display: "flex", alignItems: "center", gap: 14,
     }}>
-      <button onClick={onMenu} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 22, padding: 0 }}>☰</button>
+      <button onClick={onMenu} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 22, padding: 0, color: C.primary }}><FaBars /></button>
       <BiolabLogo height={34} />
     </div>
   );
@@ -912,12 +923,12 @@ function AdminDashboard() {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const stats = [
-    { label: "Pacientes", value: "1.284", icon: "👥", change: "+12%", color: C.primary },
-    { label: "Exames Realizados", value: "8.432", icon: "🔬", change: "+8%", color: C.secondary },
-    { label: "Exames Pendentes", value: "47", icon: "⏳", change: "-3%", color: C.warning },
-    { label: "Exames Concluídos", value: "8.385", icon: "✅", change: "+9%", color: C.success },
-    { label: "Receita Mensal", value: "R$ 71.2k", icon: "💰", change: "+14%", color: "#7C3AED" },
-    { label: "Assinaturas 360", value: "342", icon: "⭐", change: "+21%", color: C.secondary },
+    { label: "Pacientes", value: "1.284", icon: <FaUserFriends />, change: "+12%", color: C.primary },
+    { label: "Exames Realizados", value: "8.432", icon: <FaMicroscope />, change: "+8%", color: C.secondary },
+    { label: "Exames Pendentes", value: "47", icon: <FaClock />, change: "-3%", color: C.warning },
+    { label: "Exames Concluídos", value: "8.385", icon: <FaCheckCircle />, change: "+9%", color: C.success },
+    { label: "Receita Mensal", value: "R$ 71.2k", icon: <FaMoneyBillWave />, change: "+14%", color: "#7C3AED" },
+    { label: "Assinaturas 360", value: "342", icon: <FaHeartbeat />, change: "+21%", color: C.secondary },
   ];
 
   const alerts = [
@@ -954,7 +965,7 @@ function AdminDashboard() {
 
       <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 18 }}>
         <Card style={{ padding: 24 }}>
-          <h3 style={{ fontSize: 15, fontWeight: 700, margin: "0 0 4px", color: C.text }}>📊 Receita Mensal</h3>
+          <h3 style={{ fontSize: 15, fontWeight: 700, margin: "0 0 4px", color: C.text, display: "flex", alignItems: "center", gap: 8 }}><FaChartLine color={C.secondary} /> Receita Mensal</h3>
           <p style={{ fontSize: 12, color: C.textSec, margin: "0 0 14px" }}>Jan – Jun 2025</p>
           <BarChart data={REVENUE_DATA} dataKey="value" color={C.secondary} />
           <div style={{ display: "flex", justifyContent: "space-between", marginTop: 6 }}>
@@ -962,7 +973,7 @@ function AdminDashboard() {
           </div>
         </Card>
         <Card style={{ padding: 24 }}>
-          <h3 style={{ fontSize: 15, fontWeight: 700, margin: "0 0 18px", color: C.text }}>🔔 Alertas Preventivos</h3>
+          <h3 style={{ fontSize: 15, fontWeight: 700, margin: "0 0 18px", color: C.text, display: "flex", alignItems: "center", gap: 8 }}><FaBell color={C.warning} /> Alertas Preventivos</h3>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {alerts.map((a, i) => (
               <div key={i} style={{
@@ -1013,7 +1024,7 @@ function PatientsModule() {
       {modal && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.45)", zIndex: 200, display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
           <Card style={{ padding: 32, width: "100%", maxWidth: 500 }}>
-            <h3 style={{ margin: "0 0 24px", fontSize: 18, fontWeight: 800 }}>{modal === "add" ? "➕ Novo Paciente" : "✏️ Editar Paciente"}</h3>
+            <h3 style={{ margin: "0 0 24px", fontSize: 18, fontWeight: 800, display: "flex", alignItems: "center", gap: 8 }}>{modal === "add" ? <><FaPlus /> Novo Paciente</> : <><FaEdit /> Editar Paciente</>}</h3>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
               {[["name", "Nome completo"], ["cpf", "CPF"], ["dob", "Nascimento"], ["phone", "Telefone"], ["email", "Email"], ["plan", "Plano"]].map(([k, l]) => (
                 <div key={k} style={{ gridColumn: (k === "name" || k === "email") ? "1 / -1" : "auto" }}>
@@ -1038,13 +1049,13 @@ function PatientsModule() {
       )}
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 22, gap: 12, flexWrap: "wrap" }}>
-        <h1 style={{ fontSize: 24, fontWeight: 800, color: C.text, margin: 0, letterSpacing: -0.5 }}>👥 Pacientes</h1>
+        <h1 style={{ fontSize: 24, fontWeight: 800, color: C.text, margin: 0, letterSpacing: -0.5, display: "flex", alignItems: "center", gap: 10 }}><FaUserFriends color={C.primary} /> Pacientes</h1>
         <Btn onClick={openAdd}>+ Novo Paciente</Btn>
       </div>
 
       <Card>
         <div style={{ padding: "14px 18px", borderBottom: `1px solid ${C.border}` }}>
-          <Input value={search} onChange={e => setSearch(e.target.value)} placeholder="🔍 Buscar por nome ou email..." />
+          <Input value={search} onChange={e => setSearch(e.target.value)} placeholder="Buscar por nome ou email..." />
         </div>
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 600 }}>
@@ -1109,7 +1120,7 @@ function ExamsModule() {
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 22, gap: 12, flexWrap: "wrap" }}>
-        <h1 style={{ fontSize: 24, fontWeight: 800, color: C.text, margin: 0, letterSpacing: -0.5 }}>🔬 Exames</h1>
+        <h1 style={{ fontSize: 24, fontWeight: 800, color: C.text, margin: 0, letterSpacing: -0.5, display: "flex", alignItems: "center", gap: 10 }}><FaMicroscope color={C.primary} /> Exames</h1>
         <Btn>+ Novo Exame</Btn>
       </div>
       <div style={{ display: "flex", gap: 8, marginBottom: 18, flexWrap: "wrap" }}>
@@ -1171,12 +1182,12 @@ function AppointmentsModule() {
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 22, gap: 12 }}>
-        <h1 style={{ fontSize: 24, fontWeight: 800, color: C.text, margin: 0, letterSpacing: -0.5 }}>📅 Agendamentos</h1>
+        <h1 style={{ fontSize: 24, fontWeight: 800, color: C.text, margin: 0, letterSpacing: -0.5, display: "flex", alignItems: "center", gap: 10 }}><FaCalendarAlt color={C.primary} /> Agendamentos</h1>
         <Btn>+ Novo</Btn>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 18 }}>
         <Card style={{ padding: 24 }}>
-          <h3 style={{ fontSize: 15, fontWeight: 700, margin: "0 0 18px" }}>📅 Junho 2025</h3>
+          <h3 style={{ fontSize: 15, fontWeight: 700, margin: "0 0 18px", display: "flex", alignItems: "center", gap: 8 }}><FaCalendarAlt color={C.secondary} /> Junho 2025</h3>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: 3, marginBottom: 8 }}>
             {["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"].map(d => (
               <div key={d} style={{ textAlign: "center", fontSize: 10, fontWeight: 700, color: C.textSec, padding: "4px 0" }}>{d}</div>
@@ -1239,15 +1250,15 @@ function AppointmentsModule() {
 function FinancialModule() {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const metrics = [
-    { l: "Receita Jun/25", v: "R$ 71.200", c: C.success, icon: "📈" },
-    { l: "Ticket Médio", v: "R$ 185,40", c: C.secondary, icon: "🎫" },
-    { l: "Assinaturas Ativas", v: "342", c: C.primary, icon: "⭐" },
-    { l: "MRR 360", v: "R$ 34.200", c: "#7C3AED", icon: "🔄" },
+    { l: "Receita Jun/25", v: "R$ 71.200", c: C.success, icon: <FaChartLine /> },
+    { l: "Ticket Médio", v: "R$ 185,40", c: C.secondary, icon: <FaTicketAlt /> },
+    { l: "Assinaturas Ativas", v: "342", c: C.primary, icon: <FaHeartbeat /> },
+    { l: "MRR 360", v: "R$ 34.200", c: "#7C3AED", icon: <FaSyncAlt /> },
   ];
 
   return (
     <div>
-      <h1 style={{ fontSize: 24, fontWeight: 800, color: C.text, margin: "0 0 22px", letterSpacing: -0.5 }}>💰 Financeiro</h1>
+      <h1 style={{ fontSize: 24, fontWeight: 800, color: C.text, margin: "0 0 22px", letterSpacing: -0.5, display: "flex", alignItems: "center", gap: 10 }}><FaMoneyBillWave color={C.primary} /> Financeiro</h1>
       <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 14, marginBottom: 22 }}>
         {metrics.map(m => (
           <Card key={m.l} hover style={{ padding: "20px 20px", borderLeft: `4px solid ${m.c}`, borderRadius: "0 16px 16px 0" }}>
@@ -1323,19 +1334,19 @@ function PatientPortal() {
   }, [chatInput]);
 
   const tabs = [
-    { id: "dashboard", label: "Minha Saúde", icon: "🏠" },
-    { id: "exams", label: "Exames", icon: "🔬" },
-    { id: "charts", label: "Evolução", icon: "📊" },
-    { id: "ai", label: "Assistente BIIA", icon: "🤖" },
+    { id: "dashboard", label: "Minha Saúde", icon: <FaHome /> },
+    { id: "exams", label: "Exames", icon: <FaMicroscope /> },
+    { id: "charts", label: "Evolução", icon: <FaChartLine /> },
+    { id: "ai", label: "Assistente BIIA", icon: <FaRobot /> },
   ];
 
-  const statusData = { normal: { color: C.success, bg: C.successBg, label: "Normal", icon: "✅" }, atenção: { color: C.warning, bg: C.warningBg, label: "Atenção", icon: "⚠️" }, crítico: { color: C.danger, bg: C.dangerBg, label: "Crítico", icon: "🚨" } };
+  const statusData = { normal: { color: C.success, bg: C.successBg, label: "Normal", icon: <FaCheckCircle /> }, atenção: { color: C.warning, bg: C.warningBg, label: "Atenção", icon: <FaExclamationTriangle /> }, crítico: { color: C.danger, bg: C.dangerBg, label: "Crítico", icon: <FaExclamationTriangle /> } };
 
   return (
     <div>
       <div style={{ marginBottom: 22 }}>
         <h1 style={{ fontSize: 24, fontWeight: 800, color: C.text, margin: "0 0 4px", letterSpacing: -0.5 }}>Portal do Paciente</h1>
-        <p style={{ color: C.textSec, fontSize: 14, margin: 0 }}>Bem-vinda, <strong>Ana Paula</strong> 👋</p>
+        <p style={{ color: C.textSec, fontSize: 14, margin: 0 }}>Bem-vinda, <strong>Ana Paula</strong></p>
       </div>
 
       {/* Tabs */}
@@ -1364,9 +1375,9 @@ function PatientPortal() {
               <ScoreMeter score={82} />
             </Card>
             {[
-              { l: "Próximo Checkup", v: "05 Jun 2025", sub: "Agendado", icon: "📅", c: C.secondary },
-              { l: "Último Exame", v: "10 Mai 2025", sub: "Hemograma", icon: "🔬", c: C.primary },
-              { l: "Alertas Ativos", v: "1 Atenção", sub: "Colesterol LDL", icon: "⚠️", c: C.warning },
+              { l: "Próximo Checkup", v: "05 Jun 2025", sub: "Agendado", icon: <FaCalendarAlt />, c: C.secondary },
+              { l: "Último Exame", v: "10 Mai 2025", sub: "Hemograma", icon: <FaMicroscope />, c: C.primary },
+              { l: "Alertas Ativos", v: "1 Atenção", sub: "Colesterol LDL", icon: <FaExclamationTriangle />, c: C.warning },
             ].map(m => (
               <Card key={m.l} hover style={{ padding: "20px 20px", borderTop: `4px solid ${m.c}`, borderRadius: "16px" }}>
                 <div style={{ fontSize: 24, marginBottom: 10 }}>{m.icon}</div>
@@ -1377,7 +1388,7 @@ function PatientPortal() {
             ))}
           </div>
           <Card style={{ padding: 24 }}>
-            <h3 style={{ fontSize: 15, fontWeight: 700, margin: "0 0 16px" }}>🔔 Alertas Preventivos</h3>
+            <h3 style={{ fontSize: 15, fontWeight: 700, margin: "0 0 16px", display: "flex", alignItems: "center", gap: 8 }}><FaBell color={C.warning} /> Alertas Preventivos</h3>
             <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 14 }}>
               {[
                 { level: "atenção", title: "Colesterol LDL", desc: "138 mg/dL — levemente acima de 130 mg/dL. Atenção à alimentação." },
@@ -1414,7 +1425,7 @@ function PatientPortal() {
                     <span style={{ fontSize: 16, fontWeight: 700, color: C.text }}>{exam.name}</span>
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                    <span style={{ fontSize: 13, color: C.textSec }}>📅 {exam.date}</span>
+                    <span style={{ fontSize: 13, color: C.textSec, display: "inline-flex", alignItems: "center", gap: 6 }}><FaCalendarAlt /> {exam.date}</span>
                     <Badge color={s.color} bg={s.bg}>{s.icon} {s.label}</Badge>
                   </div>
                 </div>
@@ -1457,9 +1468,9 @@ function PatientPortal() {
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 18 }}>
           {[
             { title: "Colesterol Total", unit: "mg/dL", data: CHOLESTEROL_DATA, key: "total", color: C.warning, ref: "< 200", last: "210", trend: "↓ em queda" },
-            { title: "Glicemia em Jejum", unit: "mg/dL", data: GLUCOSE_DATA, key: "value", color: C.secondary, ref: "70–99", last: "92", trend: "✅ ideal" },
+            { title: "Glicemia em Jejum", unit: "mg/dL", data: GLUCOSE_DATA, key: "value", color: C.secondary, ref: "70–99", last: "92", trend: "ideal" },
             { title: "Peso Corporal", unit: "kg", data: WEIGHT_DATA, key: "value", color: C.primary, ref: "≈ 68–72", last: "69.2", trend: "↓ estável" },
-            { title: "Pressão Sistólica", unit: "mmHg", data: PRESSURE_DATA, key: "sys", color: "#7C3AED", ref: "< 120", last: "118", trend: "✅ ideal" },
+            { title: "Pressão Sistólica", unit: "mmHg", data: PRESSURE_DATA, key: "sys", color: "#7C3AED", ref: "< 120", last: "118", trend: "ideal" },
           ].map(chart => (
             <Card key={chart.title} hover style={{ padding: 24 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
@@ -1491,7 +1502,7 @@ function PatientPortal() {
               width: 44, height: 44, borderRadius: "50%",
               background: "rgba(255,255,255,0.18)", display: "flex",
               alignItems: "center", justifyContent: "center", fontSize: 22,
-            }}>🤖</div>
+            }}><FaRobot /></div>
             <div>
               <div style={{ color: "#fff", fontWeight: 700, fontSize: 15 }}>BIIA — Assistente Inteligente</div>
               <div style={{ color: "rgba(255,255,255,0.65)", fontSize: 12, display: "flex", alignItems: "center", gap: 6 }}>
@@ -1505,7 +1516,7 @@ function PatientPortal() {
             {messages.map((m, i) => (
               <div key={i} style={{ display: "flex", justifyContent: m.from === "user" ? "flex-end" : "flex-start", gap: 10, alignItems: "flex-end" }}>
                 {m.from === "ai" && (
-                  <div style={{ width: 32, height: 32, borderRadius: "50%", background: C.gradient, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, flexShrink: 0 }}>🤖</div>
+                  <div style={{ width: 32, height: 32, borderRadius: "50%", background: C.gradient, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, flexShrink: 0 }}><FaRobot /></div>
                 )}
                 <div style={{
                   maxWidth: "72%", padding: "12px 16px",
@@ -1519,7 +1530,7 @@ function PatientPortal() {
             ))}
             {aiLoading && (
               <div style={{ display: "flex", gap: 10, alignItems: "flex-end" }}>
-                <div style={{ width: 32, height: 32, borderRadius: "50%", background: C.gradient, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14 }}>🤖</div>
+                <div style={{ width: 32, height: 32, borderRadius: "50%", background: C.gradient, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14 }}><FaRobot /></div>
                 <div style={{ padding: "12px 18px", borderRadius: "18px 18px 18px 4px", background: C.surface, boxShadow: "0 2px 10px rgba(0,0,0,0.08)" }}>
                   <div style={{ display: "flex", gap: 5, alignItems: "center" }}>
                     {[0, 0.2, 0.4].map((delay, i) => (
@@ -1562,7 +1573,7 @@ function PatientPortal() {
               onKeyDown={e => e.key === "Enter" && sendChat()}
               onMouseEnter={e => e.currentTarget.style.opacity = "0.85"}
               onMouseLeave={e => e.currentTarget.style.opacity = "1"}
-            >→</button>
+            ><FaArrowRight /></button>
           </div>
         </Card>
       )}
@@ -1602,11 +1613,11 @@ function AppLayout({ user, onLogout, menu, defaultSection, children }) {
 // ===================== ADMIN SYSTEM =====================
 function AdminSystem({ user, onLogout }) {
   const menu = [
-    { id: "dashboard", label: "Dashboard", icon: "📊" },
-    { id: "patients", label: "Pacientes", icon: "👥" },
-    { id: "exams", label: "Exames", icon: "🔬" },
-    { id: "appointments", label: "Agendamentos", icon: "📅" },
-    { id: "financial", label: "Financeiro", icon: "💰" },
+    { id: "dashboard", label: "Dashboard", icon: <FaChartLine /> },
+    { id: "patients", label: "Pacientes", icon: <FaUserFriends /> },
+    { id: "exams", label: "Exames", icon: <FaMicroscope /> },
+    { id: "appointments", label: "Agendamentos", icon: <FaCalendarAlt /> },
+    { id: "financial", label: "Financeiro", icon: <FaMoneyBillWave /> },
   ];
   const content = {
     dashboard: <AdminDashboard />,
@@ -1624,7 +1635,7 @@ function AdminSystem({ user, onLogout }) {
 
 // ===================== PATIENT SYSTEM =====================
 function PatientSystem({ user, onLogout }) {
-  const menu = [{ id: "portal", label: "Minha Saúde", icon: "🏠" }];
+  const menu = [{ id: "portal", label: "Minha Saúde", icon: <FaHome /> }];
   return (
     <AppLayout user={user} onLogout={onLogout} menu={menu} defaultSection="portal">
       {() => <PatientPortal />}
